@@ -12,29 +12,47 @@ function getTopic () {
           method: "GET"
         })
         .done(function(response) {
-          console.log(response);
           var results = response.data;
+          $(".jumbotron").empty();
           for (var i = 0; i < results.length; i++) {
 
             if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
               var gifDiv = $("<div class='item'>");
               var rating = results[i].rating;
               var p = $("<p>").text("Rating: " + rating);
+              var animateGiphyImage = results[i].images.fixed_height.url;
+              var stillGiphyImage = results[i].images.fixed_height_still.url;
               var giphyImage = $("<img>");
-              giphyImage.attr("src", results[i].images.fixed_height.url);
+              giphyImage.attr("src", stillGiphyImage);
+              giphyImage.data("still", stillGiphyImage);
+              giphyImage.data("animate", animateGiphyImage);
+              giphyImage.data("state", "still");
+              giphyImage.addClass("giphyResult");
               gifDiv.append(p);
               gifDiv.append(giphyImage);
-              $(".jumbotron").prepend(gifDiv);
+		      $(".jumbotron").append(gifDiv);
             }
           }
         });
     })
 }
 
+$(document).on("click", ".giphyResult", function(){
+	var state = $(this).attr("data-state");
+   
+		if (state == "still") {
+		    $(this).attr("src", $(this).data("animate"));
+		    $(this).attr("data-state", "animate");
+		  } else {
+		    $(this).attr("src", $(this).data("still"));
+		    $(this).attr("data-state", "still");
+		  }
+})
 
 $(document).ready(function() {
 	
 	function topicsHTML() {
+		$(".buttons").empty();
 		for (var i = 0; i < topics.length; i++) {
 			topic = $("<button>");
 			topic.data("giphy", topics[i]);
@@ -43,6 +61,14 @@ $(document).ready(function() {
 			$(".buttons").append(topic);	
 		}
 	}
+
+	$("#add-giphy").on("click", function(event){
+		event.preventDefault();
+		var newTopic = $("#giphy-input").val().trim();
+		topics.push(newTopic);
+		topicsHTML();
+		getTopic();
+	})
 
 	topicsHTML();
 	getTopic();
