@@ -42,7 +42,7 @@ $(document).ready(function() {
 	              giphyImage.addClass("giphyResult");
 	              gifDiv.append(p);
 	              gifDiv.append(giphyImage);
-			      $(".jumbotron").append(gifDiv);
+	              $(".jumbotron").prepend(gifDiv);
 	            }
 	          }
 	        });

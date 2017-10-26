@@ -6,6 +6,43 @@ body {
   	background-size: cover;
 }
 
+h1 {
+	font-family: 'Press Start 2P', cursive;
+	color: white;
+}
+
+p {
+	font-family: 'Press Start 2P', cursive;
+	color: white;
+	margin: 0 2%;
+}
+
+label {
+	font-family: 'VT323', monospace;
+	color: white;
+	font-size: x-large;
+}
+
+.page-header {
+	border-bottom: none;
+}
+
 .jumbotron {
 	background-color: transparent;
+	margin-top: 2%;
+	padding: 2%!important;
+}
+
+.topicsBtn {
+	font-family: 'Press Start 2P', cursive;
+	margin: 1% 2%;
+}
+
+#giphy-input {
+	font-family: font-family: 'VT323', monospace;
+}
+
+.giphyResult {
+	float: left;
+	margin: 2% 2%;
 }
