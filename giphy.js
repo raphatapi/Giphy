@@ -55,7 +55,7 @@ $(document).ready(function() {
 		topics.push(newTopic);
 		topicsHTML();
 		getTopic();
-		// $("#giphy-input").val() = "";
+		$("#giphy-input").val("");
 	})
 
 	topicsHTML();
