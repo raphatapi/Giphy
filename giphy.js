@@ -1,4 +1,4 @@
-var topics = ["Pink Floyd", "Tron", "Dragon Ball Z"];
+var topics = ["Pink Floyd", "Tron", "Dragon Ball", "Soccer", "Lord of the Rings"];
 
 
 $(document).ready(function() {
