@@ -2,6 +2,25 @@ var topics = ["Pink Floyd", "Tron", "Dragon Ball Z"];
 
 
 $(document).ready(function() {
+
+	var audioElement = document.createElement("audio");
+      audioElement.setAttribute("src", "songs/giphy1.mp3");
+      audioElement.play();
+      $("#theme-button").text("Pause Music");
+
+    //Use button to toggle music on/off
+	    $("#theme-button").on("click", function() {
+	          //If it's not paused then pause it and change button text to "Play Music"
+	          if (!audioElement.paused) {
+	            audioElement.pause();           
+	            $("#theme-button").text("Play Music");
+	          //Or do the opposite
+	        } else {
+	            audioElement.play();           
+	          $("#theme-button").text("Pause Music");
+	        }
+	      });
+
 	function topicsHTML() {
 		$(".buttons").empty();
 		for (var i = 0; i < topics.length; i++) {
@@ -17,7 +36,7 @@ $(document).ready(function() {
 
 		$(".topicsBtn").on("click", function() {
 	      var topic = $(this).data("giphy");
-		  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=6xfaAb1rplRM55HrAsCdiL6jn7DwEZLy&limit=5";
+		  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=6xfaAb1rplRM55HrAsCdiL6jn7DwEZLy&limit=10";
 
 	      $.ajax({
 	          url: queryURL,
@@ -56,7 +75,22 @@ $(document).ready(function() {
 		topicsHTML();
 		getTopic();
 		$("#giphy-input").val("");
+		$("#add-giphy").attr("disabled",true);
+	    $("#giphy-input").keyup(function(){
+	        if($(this).val().length !=0)
+	            $("#add-giphy").attr("disabled", false);            
+	        else
+	            $("#add-giphy").attr("disabled",true);
+	    })
 	})
+
+	$("#add-giphy").attr("disabled",true);
+	    $("#giphy-input").keyup(function(){
+	        if($(this).val().length !=0)
+	            $("#add-giphy").attr("disabled", false);            
+	        else
+	            $("#add-giphy").attr("disabled",true);
+	    })
 
 	topicsHTML();
 	getTopic();

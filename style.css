@@ -24,8 +24,15 @@ label {
 	font-size: xx-large;
 }
 
+.theme {
+	margin-bottom: 3%;
+	font-family: 'VT323', monospace;
+	font-size: xx-large;
+}
+
 .page-header {
 	border-bottom: none;
+	margin-bottom: none;
 }
 
 .jumbotron {
