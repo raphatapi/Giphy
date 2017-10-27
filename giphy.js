@@ -13,15 +13,6 @@ $(document).ready(function() {
 		}
 	}
 
-	// function emptyForm() {
-	//     var x;
-	//     x = document.getElementById("giphy-input").value;
-	//     if (x === "") {
-	//         alert("Enter a Valid Roll Number");
-	//         return false;
-	//     };
-	// } 
-
 	function getTopic () {
 
 		$(".topicsBtn").on("click", function() {

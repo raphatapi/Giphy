@@ -41,10 +41,15 @@ label {
 
 #giphy-input {
 	font-family: font-family: 'VT323', monospace;
+	margin-left: 2%;
 }
 
 .giphyResult {
 	margin: 2% 2%;
+}
+
+#add-giphy {
+	margin-top: 2%;
 }
 
 
