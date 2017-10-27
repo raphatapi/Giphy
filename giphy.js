@@ -13,6 +13,15 @@ $(document).ready(function() {
 		}
 	}
 
+	// function emptyForm() {
+	//     var x;
+	//     x = document.getElementById("giphy-input").value;
+	//     if (x === "") {
+	//         alert("Enter a Valid Roll Number");
+	//         return false;
+	//     };
+	// } 
+
 	function getTopic () {
 
 		$(".topicsBtn").on("click", function() {
@@ -29,7 +38,7 @@ $(document).ready(function() {
 	          for (var i = 0; i < results.length; i++) {
 
 	            if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-	              var gifDiv = $("<div class='item'>");
+	              var gifDiv = $("<div class='item text-center'>");
 	              var rating = results[i].rating;
 	              var p = $("<p>").text("Rating: " + rating);
 	              var animateGiphyImage = results[i].images.fixed_height.url;
@@ -62,15 +71,15 @@ $(document).ready(function() {
 	getTopic();
 
 	$(document).on("click", ".giphyResult", function(){
-		console.log("here1");
+		// console.log("here1");
 	var state = $(this).attr("data-state");
    
 		if (state === "still") {
-			console.log("here2");
+			// console.log("here2");
 		    $(this).attr("src", $(this).data("animate"));
 		    $(this).attr("data-state", "animate");
 		  } else {
-		  	console.log("here3");
+		  	// console.log("here3");
 		    $(this).attr("src", $(this).data("still"));
 		    $(this).attr("data-state", "still");
 		  }

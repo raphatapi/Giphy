@@ -14,13 +14,14 @@ h1 {
 p {
 	font-family: 'Press Start 2P', cursive;
 	color: white;
+	height: 20px;
 	margin: 0 2%;
 }
 
 label {
 	font-family: 'VT323', monospace;
 	color: white;
-	font-size: x-large;
+	font-size: xx-large;
 }
 
 .page-header {
@@ -43,6 +44,7 @@ label {
 }
 
 .giphyResult {
-	float: left;
 	margin: 2% 2%;
 }
+
+
