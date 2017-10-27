@@ -26,7 +26,7 @@ $(document).ready(function() {
 		for (var i = 0; i < topics.length; i++) {
 			topic = $("<button>");
 			topic.data("giphy", topics[i]);
-			topic.addClass("text-center btn btn-warning btn-lg topicsBtn");
+			topic.addClass("text-center btn btn-info btn-lg topicsBtn");
 			topic.text(topics[i]);
 			$(".buttons").append(topic);	
 		}
