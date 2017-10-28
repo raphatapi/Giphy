@@ -24,11 +24,19 @@ label {
 	font-size: xx-large;
 }
 
-.theme {
+#theme-button {
 	margin-bottom: 3%;
 	font-family: 'VT323', monospace;
-	font-size: xx-large;
-	letter-spacing: 20px;
+	font-size: large;
+	letter-spacing: 5px;
+	box-shadow: 0 0 1px #ccc;
+    -webkit-transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-out;
+    -webkit-box-shadow: 0px 0px 0 0 #5bc0de inset , 0px 0px 0 #5bc0de inset;
+}
+
+#theme-button:hover {
+	-webkit-box-shadow: 0px 50px 0 0px #5bc0de inset , 0px -50px 0 0px #5bc0de inset;
 }
 
 .page-header {
@@ -45,6 +53,13 @@ label {
 .topicsBtn {
 	font-family: 'Press Start 2P', cursive;
 	margin: 1% 2%;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-out;
+    -webkit-box-shadow: 0px 0px 0 0 #31708f inset , 0px 0px 0 #31708f inset;
+}
+.topicsBtn:hover{
+    -webkit-box-shadow: 0px 50px 0 0px #31708f inset , 0px -50px 0 0px #31708f inset; 
 }
 
 #giphy-input {
@@ -60,10 +75,14 @@ label {
 	margin-top: 2%;
 }
 
-
-/*@media only screen and (max-width: 768px) {
-	html {
+@media only screen and (max-width: 768px) {
+	.giphyResult {
 		width: 100%;
+	}
+
+	.topicsBtn {
+		width: 100%;
+		white-space: normal;
 	}
 }
 
@@ -77,4 +96,4 @@ label {
 
 @media (min-width: 1200px;) {
 
-}*/
+}

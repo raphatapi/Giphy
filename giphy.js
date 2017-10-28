@@ -77,19 +77,24 @@ $(document).ready(function() {
 		$("#giphy-input").val("");
 		$("#add-giphy").attr("disabled",true);
 	    $("#giphy-input").keyup(function(){
-	        if($(this).val().length !=0)
+	        if( $.trim($(this).val()).length > 0){
 	            $("#add-giphy").attr("disabled", false);            
-	        else
+	        }
+	        
+	        else {
 	            $("#add-giphy").attr("disabled",true);
+	        }
 	    })
 	})
 
 	$("#add-giphy").attr("disabled",true);
 	    $("#giphy-input").keyup(function(){
-	        if($(this).val().length !=0)
+	        if( $.trim($(this).val()).length > 0) {
 	            $("#add-giphy").attr("disabled", false);            
-	        else
+	        }
+	        else {
 	            $("#add-giphy").attr("disabled",true);
+	        }
 	    })
 
 	topicsHTML();
